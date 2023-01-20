@@ -1,11 +1,16 @@
-import { FC } from 'react';
+import './index.css';
 
-const App: FC = () => {
-  return (
-    <main id='main' tabIndex={-1} role='main'>
-      <button>Submit</button>
-    </main>
-  );
-};
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { ItemListScreen } from './screens/ItemList';
+
+const router = createBrowserRouter([
+  {
+    path: '/items',
+    element: <ItemListScreen />,
+  },
+]);
+
+const App = () => <RouterProvider router={router} />;
 
 export default App;
